@@ -4,7 +4,7 @@ function Card() {
   return (
     <div>
       <div className="card mt-3" style={{ width: "18rem", maxHeight: "360px" }}>
-        <img src="..." className="card-img-top" alt="..." />
+        <img src="https://th.bing.com/th/id/OIP.jJI3bTJ-diLfKDHb9-vwmwHaE8?rs=1&pid=ImgDetMain" className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
           <p className="card-text">This is some text.</p>

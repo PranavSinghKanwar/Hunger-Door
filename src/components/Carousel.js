@@ -7,8 +7,9 @@ function Carousel() {
         id="carouselExampleFade"
         class="carousel slide carousel-fade"
         data-bs-ride="carousel"
+        style={{objectFit:"contain !important"}}
       >
-        <div class="carousel-inner">
+        <div class="carousel-inner" id="carousel">
           <div className="carousel-caption" style={{zIndex:"10"}}>
             <form className="d-flex">
               <input
