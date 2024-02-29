@@ -4,6 +4,8 @@ const app = express();
 const port = 5000;
 
 db();
+app.use(express.json());
+app.use('/api', require('./routes/create_user'));
 app.get('/', (req, res) => {
     res.send('Hello World');
 })
