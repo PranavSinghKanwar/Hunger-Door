@@ -110,10 +110,11 @@ function Home() {
                 .map(filteredItems => {
                   return (
                     <div key={filteredItems._id} className='col-12 col-md-6 col-lg-3'>
-                      <Card itemName={filteredItems.name}
+                      <Card
+                        //itemName={filteredItems.name}
+                        foodItem = {filteredItems}
                         options={filteredItems.options[0]}
-                        imgSrc={filteredItems.img}
-                        desc={filteredItems.description}
+                        // imgSrc={filteredItems.img}
                       />
                     </div>
                   )

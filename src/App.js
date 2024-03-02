@@ -10,18 +10,21 @@ import{
 } from "react-router-dom"
 import Login from './screens/Login.js';
 import Signup from './screens/Signup.js';
+import {CartProvider} from './components/ContextReducer.js';
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route exact path="/" element={<Home/>} />
-          <Route exact path="/login" element={<Login/>} />
-          <Route exact path="/create_user" element={<Signup/>}/>
-        </Routes>
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div>
+          <Routes>
+            <Route exact path="/" element={<Home/>} />
+            <Route exact path="/login" element={<Login/>} />
+            <Route exact path="/create_user" element={<Signup/>}/>
+          </Routes>
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 
