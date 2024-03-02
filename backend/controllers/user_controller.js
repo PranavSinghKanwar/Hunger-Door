@@ -1,11 +1,16 @@
 const User = require('../models/User');
 const {body, validationResult} = require('express-validator');
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const jwtSecret = "ubvkjrebviuwbvuibbkjreivb";
 
 module.exports.create_user = async function(req, res){
     const errors = validationResult(req);
     if(!errors.isEmpty()){
         return res.status(400).json({errors:errors.array()});
     }
+    const salt = await bcrypt.genSalt(10);
+    let secPassword = await bcrypt.hash(req.body.password, salt);
     try{
         let email = req.body.email;
         let found_user = await User.findOne({email});
@@ -15,7 +20,7 @@ module.exports.create_user = async function(req, res){
         else{
             const user_created = await User.create({
                 name: req.body.name,
-                password: req.body.password,
+                password: secPassword,
                 email: req.body.email,
                 location: req.body.location
             });
@@ -40,11 +45,18 @@ module.exports.login_user = async function(req, res){
             return res.status(400).json({errors:"Incorrect email/password"});
         }
         else{
-            if(req.body.password !== found_user.password){
+            const pwdCompare = await bcrypt.compare(req.body.password, found_user.password);
+            if(!pwdCompare){
                 return res.status(400).json({errors:"Incorrect email/password"});
             }
             else{
-                return res.json({success:true});
+                const data = {
+                    user:{
+                        id: found_user.id
+                    }
+                }
+                const authToken = jwt.sign(data, jwtSecret);
+                return res.json({success:true, authToken:authToken});
             }
         }
     }
