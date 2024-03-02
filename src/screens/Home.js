@@ -58,7 +58,7 @@ function Home() {
               src="https://source.unsplash.com/random/900x700/?burger"
               class="d-block w-100"
               alt="..."
-              style={{filter:"brightness(30%"}}
+              style={{filter:"brightness(40%)", objectFit:"contain"}}
             />
           </div>
           <div class="carousel-item">
@@ -66,7 +66,7 @@ function Home() {
               src="https://source.unsplash.com/random/900x700/?pizza"
               class="d-block w-100"
               alt="..."
-              style={{filter:"brightness(30%"}}
+              style={{filter:"brightness(40%)", objectFit:"contain"}}
             />
           </div>
           <div class="carousel-item">
@@ -74,7 +74,7 @@ function Home() {
               src="https://source.unsplash.com/random/900x700/?pastry"
               class="d-block w-100"
               alt="..."
-              style={{filter:"brightness(30%"}}
+              style={{filter:"brightness(40%)", objectFit:"contain"}}
             />
           </div>
         </div>
