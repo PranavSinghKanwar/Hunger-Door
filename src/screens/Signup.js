@@ -10,14 +10,28 @@ function Signup() {
   });
   const handleSubmit = async function (e) {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/create_user", {
-      method: "POST",
-      header: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({name:credentials.name, email:credentials.email, password: credentials.password, location: credentials.location}),
-    });
+    try {
+      const response = await fetch("http://localhost:5000/api/create_user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({name:credentials.name, email:credentials.email, password: credentials.password, location: credentials.location}),
+      });
+      const json = await response.json();
+      console.log(json);
+  
+      if(!json.success){
+        alert("Enter valid credentials");
+      }
+      else{
+        alert("Good to go");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   };
+  
 
   const changing = function(event){
     setCredentials({...credentials, [event.target.name]:event.target.value});
@@ -27,13 +41,13 @@ function Signup() {
       <div className="container">
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label for="name" className="form-label">
+            <label htmlFor="name" className="form-label">
               Name
             </label>
             <input type="text" id="name" className="form-control" name="name" value={credentials.name} onChange={changing}/>
           </div>
           <div className="mb-3">
-            <label for="email" className="form-label">
+            <label htmlFor="email" className="form-label">
               Email
             </label>
             <input type="email" id="email" className="form-control" name="email" value={credentials.email} onChange={changing}/>
@@ -42,13 +56,13 @@ function Signup() {
             </div>
           </div>
           <div className="mb-3">
-            <label for="password" className="form-label">
+            <label htmlFor="password" className="form-label">
               Password
             </label>
             <input type="password" id="password" className="form-control" name="password" value={credentials.password} onChange={changing}/>
           </div>
           <div className="mb-3">
-            <label for="location" className="form-label">
+            <label htmlFor="location" className="form-label">
               Address
             </label>
             <input type="text" id="location" className="form-control" name="location" value={credentials.location} onChange={changing}/>

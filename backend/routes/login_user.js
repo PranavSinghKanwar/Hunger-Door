@@ -4,6 +4,8 @@ const User = require('../models/User');
 const userController = require('../controllers/user_controller');
 const {body, validationResult} = require('express-validator');
 
-router.post('/create_user',[body('email').isEmail(), body('password').isLength({min:5})] , userController.create_user);
+
+
+router.post("/login_user",[body('email').isEmail()] , userController.login_user);
 
 module.exports = router;
