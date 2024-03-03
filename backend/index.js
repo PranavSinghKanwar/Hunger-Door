@@ -16,6 +16,7 @@ app.use(express.json());
 app.use('/api', require('./routes/create_user'));
 app.use('/api', require('./routes/login_user'));
 app.use('/api', require('./routes/display_data'));
+app.use('/api', require('./routes/order_data'));
 app.get('/', (req, res) => {
     res.send('Hello World');
 })
