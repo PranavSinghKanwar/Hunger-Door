@@ -31,3 +31,13 @@ module.exports.display_order_data = async function(req, res){
     }
 
 }
+
+module.exports.display_my_order_data = async function(req, res){
+    try{
+        let myData = await Order.findOne({'email':req.body.email});
+        res.json({orderData:myData});
+    }
+    catch(err){
+        res.send("Server error", error.message);
+    }
+}
