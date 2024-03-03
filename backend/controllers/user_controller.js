@@ -2,7 +2,8 @@ const User = require('../models/User');
 const {body, validationResult} = require('express-validator');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const jwtSecret = "ubvkjrebviuwbvuibbkjreivb";
+const env = require("../config/environment");
+const jwtSecret = env.jwt_secret;
 
 module.exports.create_user = async function(req, res){
     const errors = validationResult(req);

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-
-const mongoURI = "mongodb+srv://pranavkanwar4:impranav@cluster0.n72uogl.mongodb.net/hungerdoor?retryWrites=true&w=majority&appName=Cluster0";
+const env = require("./environment");
+const mongoURI = env.db_uri;
 async function db() {
     try {
         await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
