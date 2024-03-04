@@ -1,3 +1,46 @@
+# Food Ordering Website
+
+Welcome to our food ordering website built with the MERN stack - MongoDB, Express.js, React, and Node.js. This project aims to provide a seamless and enjoyable experience for users looking to order food online.
+
+## Features
+
+1. **Smooth Navigation:**
+   - Achieved a seamless user experience with no page reloads, ensuring a fluid transition between different sections of the website.
+  
+2. **Dynamic Search Bar:**
+   - Implemented a dynamic search bar that filters food items in real-time as users type, providing a responsive and efficient search experience.
+
+3. **Add to Cart Functionality:**
+   - Integrated an 'Add to Cart' feature allowing users to easily select items, which are then dynamically added to the cart. The cart displays the total price of selected items.
+
+4. **Responsive Design with Bootstrap:**
+   - Ensured a visually appealing and user-friendly design using Bootstrap, making the website responsive across various devices.
+
+5. **User Authentication:**
+   - Implemented user authentication for account creation, login, and logout, enabling personalized experiences, order history, and saved preferences.
+
+6. **Order Checkout:**
+   - Provided a convenient checkout feature that compiles the current order and sends it to a 'My Orders' page for users to track and review past orders.
+
+7. **Order Tracking:**
+   - Integrated order tracking functionality to keep users informed about the status of their orders, enhancing the overall user experience.
+
+8. **Delete from Cart:**
+   - Enabled users to remove items from their cart, offering flexibility in managing their selected items before finalizing the order.
+
+## Screenshots
+![image](https://github.com/PranavSinghKanwar/Hunger-Door/assets/97502224/8655c082-6800-4013-aa7b-f3056abb484c)
+![image](https://github.com/PranavSinghKanwar/Hunger-Door/assets/97502224/d974489d-d37c-4e6d-9064-4ba8fcdc45f2)
+![image](https://github.com/PranavSinghKanwar/Hunger-Door/assets/97502224/448965ae-6768-4882-8a8a-23d2229255d6)
+![image](https://github.com/PranavSinghKanwar/Hunger-Door/assets/97502224/3cf6e14d-c7a4-45c0-8c1d-aa4813a8599e)
+![image](https://github.com/PranavSinghKanwar/Hunger-Door/assets/97502224/af3a1be5-6cff-44c0-a8d3-c394570600c9)
+
+
+
+---
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
